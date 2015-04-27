@@ -37,9 +37,13 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    benchmark-ips (2.1.1)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    bullet (4.14.5)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.9.0)
     byebug (4.0.5)
       columnize (= 0.9.0)
     coffee-rails (4.1.0)
@@ -53,6 +57,14 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.5.2)
+    fast_stack (0.1.0)
+      rake
+      rake-compiler
+    flamegraph (0.1.0)
+      fast_stack
+    foundation-rails (5.4.5.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -74,7 +86,11 @@ GEM
     multi_json (1.11.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.0)
+    rack-mini-profiler (0.9.3)
+      rack (>= 1.1.3)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
@@ -102,6 +118,8 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    rake-compiler (0.9.5)
+      rake
     rdoc (4.2.0)
       json (~> 1.4)
     sass (3.4.13)
@@ -122,6 +140,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.10)
+    stackprof (0.2.7)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -132,6 +151,7 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uniform_notifier (1.9.0)
     web-console (2.1.2)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -142,15 +162,23 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  benchmark-ips
+  bullet
   byebug
   coffee-rails (~> 4.1.0)
+  flamegraph
+  foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
+  minitest
+  quiet_assets
+  rack-mini-profiler
   rails (= 4.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
   sqlite3
+  stackprof
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
